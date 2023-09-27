@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="jp"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./css/styles.css">
+<script type="text/javascript" src="./js/main.js"></script>
+<title>TODOリスト</title>
+</head>
+<body>
+  <div class="todo-container">
+    <div class="todo-header">ToDo List</div>
+    <div></div>
+    <div class="todo-item" th:each="todo : ${todos}">
+	  <input type="hidden" id="todo_id" th:value="${todo.id}">
+      <input type="checkbox" id="todo_done_flg" class="todo-check" th:checked="${todo.done_flg}">
+      <input type="text"  id="todo_title" class="todo-text" th:value="${todo.title}"></input>
+      <input type="date" id="todo_limit" class="todo-date" pattern="\d{4}-\d{2}-\d{2}" th:value="${todo.time_limit}"></input>
+      <i class="update-icon"></i>
+      <i class="trash-icon"></i>
+    </div>
+    <form method="post" id="todo">
+		<input type="text" name="id" id="id" class="hide">
+	    <input type="text" name="time_limit" id="time_limit" class="hide">
+	    <input type="text" name="done_flg" id="done_flg" class="hide">
+	    <input type="text" name="title" id="title" class="todo-input" placeholder="Add a new task">
+	    <button class="todo-button">Add Task</button>
+    </form>
+  </div>
+
+</body></html>

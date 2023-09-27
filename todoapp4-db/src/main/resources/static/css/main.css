@@ -1,0 +1,75 @@
+h1{
+	text-align: center;
+	font-size: 40px;
+}
+h2{
+	padding:0;
+	margin:0;
+}
+
+p {
+	margin:0 0;
+}
+
+button{
+	background-color: darkblue;
+	color:white;
+	border: 0;
+	border-radius: 5px;
+	padding: 7px 15px;
+	margin-top:3px;
+}
+.day{
+	display: flex;
+}
+.day h2 {
+	flex:1;
+}
+.day input {
+	width: 100%;
+	border: 2px solid #999;
+	border-radius: 7px;
+}
+
+.list-contents{
+	background-color: azure;
+	border-bottom: solid 2px #dadada;
+	margin-top: 10px;
+}
+.list-contents:hover{
+	background-color: rgb(231, 245, 169);
+}
+/*#id .list-contents,#flg .list-contents{*/
+div p:nth-child(3),
+div p:nth-child(4){
+	display: none;
+}
+.list-contents:hover p:nth-child(3),
+.list-contents:hover p:nth-child(4){
+	display: block;
+}
+.list-contents h2{
+	display: inline-block;
+	width: auto;
+	margin-top: 4px;
+}
+input[type=checkbox] {
+	transform: scale(1.5);
+	margin: 0 6px 0 13px;
+}
+/*input[type=checkbox]:checked ~ .list-contents{*/
+/*チェックボックスのtrue/falseでベースカラーの変更*/
+.list-contents:has(input[type=checkbox]:checked){
+	background-color: rgb(192, 192, 192);
+}
+button:hover{
+	background-color: rgb(192, 192, 192);
+	color:black;
+}
+
+
+p:nth-child(5){
+		display: inline-block;
+		width: 100%;
+		text-align: right;
+}
